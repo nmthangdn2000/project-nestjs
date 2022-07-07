@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
@@ -7,6 +8,9 @@ async function bootstrap() {
 
   // Cors
   app.enableCors({ origin: getCorsOrigins(), credentials: true });
+
+  //Validate
+  app.useGlobalPipes(new ValidationPipe());
 
   // SwaggerModule
   const config = new DocumentBuilder()
