@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import * as crypto from 'crypto';
 
 const SHA512 = 'sha512';
 const SHA256 = 'sha256';

@@ -12,11 +12,13 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env',
+      load: [jwtConstants],
     }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     PassportModule,
     JwtModule.register({
-      secret: jwtConstants.secret,
+      secret: jwtConstants().secret,
       signOptions: {
         expiresIn: '1d',
       },
