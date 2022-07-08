@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, Request } from '@nestjs/common';
 import { Auth } from '../decorators/Auth.decorator';
 import { UserDto } from '../dtos/user.dto';
-import { Role } from '../enums/role.enum';
+import { Role } from '../../enums/role.enum';
 import { User } from '../schemas/user.schema';
 import { AuthService } from '../services/auth.service';
 
