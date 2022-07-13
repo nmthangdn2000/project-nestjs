@@ -8,6 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from '../common/contants';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { ConfigModule } from '@nestjs/config';
+import { MailService } from '../mailers/services/mailer.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -25,6 +26,6 @@ import { ConfigModule } from '@nestjs/config';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, MailService],
 })
 export class AuthModule {}
